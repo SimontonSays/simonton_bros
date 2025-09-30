@@ -1,0 +1,41 @@
+﻿# Simonton Bros
+
+A side-scrolling platformer inspired by *Super Mario Bros. 3*, built in Python with Pygame.
+
+## Features
+- Smooth player movement and jumping
+- Expandable level system
+- Clean code structure
+
+## Controls
+- Left / Right → Move
+- Space / Up / W → Jump
+- Esc → Quit
+
+## Quickstart
+```bash
+# Activate virtual environment
+.venv\Scripts\activate.bat    # Windows
+source .venv/bin/activate     # macOS/Linux
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Run the game
+python main.py
+
+## Create `.gitignore`
+```powershell
+@'
+# Byte-compiled / cache
+__pycache__/
+*.pyc
+
+# Virtual environment
+.venv/
+venv/
+env/
+
+# OS files
+.DS_Store
+Thumbs.db
