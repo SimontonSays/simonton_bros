@@ -17,8 +17,3 @@ Windows:
   .venv\Scripts\activate.bat
   pip install -r requirements.txt
   python main.py
-
-macOS/Linux:
-  source .venv/bin/activate
-  pip install -r requirements.txt
-  python main.py
