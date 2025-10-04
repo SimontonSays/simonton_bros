@@ -1,13 +1,26 @@
 # player.py
+import os
+
 import pygame
 from settings import TILESIZE, GRAVITY, RUN_SPEED, JUMP_VELOCITY, PLAYER_GREEN
 
 class Player(pygame.sprite.Sprite):
     def __init__(self, pos):
         super().__init__()
-        # Visible rectangle for now (replace with sprite later)
-        self.image = pygame.Surface((int(TILESIZE * 0.8), int(TILESIZE * 0.95)))
-        self.image.fill(PLAYER_GREEN)
+        # Load sprite
+        project_root = os.path.dirname(os.path.abspath(__file__))
+        sprite_path = os.path.join(project_root, "assets", "sprites", "player.png")
+        print(f"[PLAYER] CWD={os.getcwd()}")
+        print(f"[PLAYER] Expecting sprite: {sprite_path}  (exists? {os.path.exists(sprite_path)})")
+
+        try:
+            img = pygame.image.load(sprite_path).convert_alpha()
+            self.image = pygame.transform.smoothscale(img, (int(TILESIZE * 0.9), int(TILESIZE * 0.95)))
+            print("[PLAYER] Sprite loaded OK")
+        except Exception as e:
+            print(f"[PLAYER] FALLBACK to green block. Reason: {repr(e)}")
+            self.image = pygame.Surface((int(TILESIZE * 0.8), int(TILESIZE * 0.95)), pygame.SRCALPHA)
+            self.image.fill(PLAYER_GREEN)
         self.rect = self.image.get_rect(topleft=pos)
 
         # Movement state
