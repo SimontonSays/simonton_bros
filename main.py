@@ -1,4 +1,4 @@
-import clock
+
 import pygame, sys
 
 
