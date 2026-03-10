@@ -36,6 +36,9 @@ __pycache__/
 venv/
 env/
 
+# IDE files
+.idea/
+
 # OS files
 .DS_Store
 Thumbs.db
