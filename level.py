@@ -34,11 +34,16 @@ class Level:
                     self.solids.add(t)
                     self.all_sprites.add(t)
 
+                elif ch == "T":
+                    t = Tile((x, y), "pipe_top")
+                    self.solids.add(t)
+                    self.all_sprites.add(t)
+
                 elif ch == "I":
                     t = Tile((x, y), "pipe")
                     self.solids.add(t)
                     self.all_sprites.add(t) 
-                        
+
                 elif ch == "P":
                     self.player = Player((x, y - TILESIZE // 2))
 
