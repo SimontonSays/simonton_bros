@@ -22,6 +22,9 @@ class Tile(pygame.sprite.Sprite):
         elif kind == "stone":
             self.draw_stone()
 
+        elif kind == "pipe":
+            self.draw_pipe()
+
         else:
             self.image.fill((255, 0, 255))  
 
@@ -92,4 +95,18 @@ class Tile(pygame.sprite.Sprite):
         # cracks / detail
         pygame.draw.line(self.image, (70, 70, 80), (8, 10), (20, 18), 2)
         pygame.draw.line(self.image, (70, 70, 80), (22, 20), (30, 30), 2)
+
+    def draw_pipe(self):
+        #pipe body
+        self.image.fill((30, 170, 40))
+
+        #darker side shading
+        pygame.draw.rect(self.image, (20, 120, 30), (0, 0, 6, TILESIZE))
+        pygame.draw.rect(self.image, (20, 120, 30), (TILESIZE - 6, 0, 6, TILESIZE))
+
+        #bright higlight strip
+        pygame.draw.rect(self.image, (80, 220, 100), (8, 0, 6, TILESIZE))
+
+        #top lip
+        pygame.draw.rect(self.image, (25, 140, 35), (0, 0, TILESIZE, 8))
         
