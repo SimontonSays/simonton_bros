@@ -24,11 +24,13 @@ def main():
         level_lines = [
             "....................................",
             "....................................",
-            "..............XXX...................",
-            "....................................",
-            "..........P.........................",
-            "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
-            "GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG",
+            "...................Q................",
+            "..............BBB...................",
+            "................................X...",
+            "..........X.........................",
+            ".....P..............................",
+            "SSSSSSSSSSSSSSSSSSSS...SSSSSSSSSSSSS",
+            "GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG",
         ]
 
     level = Level(level_lines)

@@ -19,6 +19,20 @@ class Level:
                 elif ch == "G":
                     t = Tile((x, y), "ground")
                     self.solids.add(t); self.all_sprites.add(t)
+                elif ch == "B":
+                    t = Tile((x, y), "brick")
+                    self.solids.add(t)
+                    self.all_sprites.add(t)
+
+                elif ch == "Q":
+                    t = Tile((x, y), "question")
+                    self.solids.add(t)
+                    self.all_sprites.add(t)
+
+                elif ch == "S":
+                    t = Tile((x, y), "stone")
+                    self.solids.add(t)
+                    self.all_sprites.add(t)     
                 elif ch == "P":
                     self.player = Player((x, y - TILESIZE // 2))
 
